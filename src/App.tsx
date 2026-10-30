@@ -1,244 +1,240 @@
+import './App.css'
+
 function App() {
   return (
-    <div className="min-h-screen bg-stone-100 text-stone-900">
-      <header className="border-b-2 border-black bg-white">
-        <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 md:px-6">
-          <h1 className="font-display text-4xl tracking-wide">
-            ANIME<span className="text-red-600">HUB</span>
+    <div className="pagina">
+      <header className="cabecalho">
+        <div className="cabecalho-conteudo">
+          <h1 className="logo">
+            ANIME<span className="logo-destaque">HUB</span>
           </h1>
 
-          <nav className="hidden md:block">
-            <ul className="flex gap-6 text-sm font-bold uppercase tracking-wide">
-              <li className="border-b-4 border-red-600">Início</li>
-              <li>Em alta</li>
-              <li>Gêneros</li>
-              <li>Lançamentos</li>
-              <li>Favoritos</li>
+          <nav className="menu">
+            <ul className="menu-lista">
+              <li className="menu-item menu-item-ativo">Início</li>
+              <li className="menu-item">Em alta</li>
+              <li className="menu-item">Gêneros</li>
+              <li className="menu-item">Lançamentos</li>
+              <li className="menu-item">Favoritos</li>
             </ul>
           </nav>
 
           <input
             type="search"
             placeholder="Buscar animes..."
-            className="hidden w-64 border-2 border-black bg-white px-3 py-2 text-sm lg:block"
+            className="busca busca-desktop"
           />
 
-          <button className="hidden border-2 border-black bg-black px-5 py-2 text-sm font-bold uppercase text-white md:block">
-            Entrar
-          </button>
+          <button className="botao botao-entrar">Entrar</button>
 
-          <button className="text-3xl md:hidden">☰</button>
+          <button className="botao-menu">☰</button>
         </div>
 
-        <div className="px-4 pb-3 md:px-6 lg:hidden">
+        <div className="busca-mobile-area">
           <input
             type="search"
             placeholder="Buscar animes..."
-            className="w-full border-2 border-black bg-white px-3 py-2 text-sm"
+            className="busca"
           />
         </div>
       </header>
 
-      <main className="mx-auto max-w-7xl px-4 py-8 md:px-6">
-        <section className="hidden gap-8 border-2 border-black bg-white p-8 md:grid md:grid-cols-2 md:items-center">
-          <div>
-            <p className="text-sm font-bold uppercase tracking-widest text-red-600">Destaque da temporada</p>
-            <h2 className="font-display text-6xl leading-none lg:text-8xl">Solo Leveling</h2>
+      <main className="principal">
+        <section className="destaque">
+          <div className="destaque-texto">
+            <p className="destaque-rotulo">Destaque da temporada</p>
+            <h2 className="destaque-titulo">Solo Leveling</h2>
 
-            <div className="mt-4 flex items-center gap-2 text-xs font-bold uppercase">
-              <span className="border-2 border-black px-2 py-1">Ação</span>
-              <span className="border-2 border-black px-2 py-1">Fantasia</span>
-              <span className="ml-2 text-base text-red-600">★ 8.7 / 10</span>
+            <div className="destaque-tags">
+              <span className="tag">Ação</span>
+              <span className="tag">Fantasia</span>
+              <span className="nota">★ 8.7 / 10</span>
             </div>
 
-            <p className="mt-4 max-w-md text-stone-600">
+            <p className="destaque-descricao">
               Sung Jin-woo é o caçador mais fraco do mundo, até ser escolhido por um sistema misterioso que
               o faz subir de nível sozinho.
             </p>
 
-            <div className="mt-6 flex gap-3 text-sm font-bold uppercase">
-              <button className="border-2 border-black bg-red-600 px-5 py-2 text-white">Ver detalhes</button>
-              <button className="border-2 border-black bg-white px-5 py-2">+ Favoritos</button>
+            <div className="destaque-botoes">
+              <button className="botao botao-vermelho">Ver detalhes</button>
+              <button className="botao botao-branco">+ Favoritos</button>
             </div>
           </div>
 
           <img
             src="/animes/sololeveling.png"
             alt="Solo Leveling"
-            className="aspect-video w-full border-2 border-black object-cover object-center"
+            className="destaque-imagem"
           />
         </section>
 
-        <div className="mt-10 lg:grid lg:grid-cols-[1fr_300px] lg:items-start lg:gap-8">
-          <section>
-            <h2 className="border-b-4 border-red-600 pb-1 font-display text-4xl">Em alta na temporada</h2>
+        <div className="listagens">
+          <section className="listagem-principal">
+            <h2 className="titulo-secao">Em alta na temporada</h2>
 
-            <ul className="mt-6 grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/demon%20slayer.jpeg" alt="Demon Slayer" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Demon Slayer</h3>
-                  <p className="text-sm text-stone-500">Ação</p>
-                  <p className="text-sm font-bold text-red-600">★ 10 / 10</p>
+            <ul className="grade-animes">
+              <li className="card">
+                <img src="/animes/demon%20slayer.jpeg" alt="Demon Slayer" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Demon Slayer</h3>
+                  <p className="card-genero">Ação</p>
+                  <p className="card-nota">★ 8.4 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/tokyo.jpeg" alt="Tokyo Revengers" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Tokyo Revengers</h3>
-                  <p className="text-sm text-stone-500">Ação</p>
-                  <p className="text-sm font-bold text-red-600">★ 9.8 / 10</p>
+              <li className="card">
+                <img src="/animes/tokyo.jpeg" alt="Tokyo Revengers" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Tokyo Revengers</h3>
+                  <p className="card-genero">Ação</p>
+                  <p className="card-nota">★ 7.8 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/jujutsu.jpeg" alt="Jujutsu Kaisen" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Jujutsu Kaisen</h3>
-                  <p className="text-sm text-stone-500">Ação</p>
-                  <p className="text-sm font-bold text-red-600">★ 8.6 / 10</p>
+              <li className="card">
+                <img src="/animes/jujutsu.jpeg" alt="Jujutsu Kaisen" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Jujutsu Kaisen</h3>
+                  <p className="card-genero">Ação</p>
+                  <p className="card-nota">★ 8.6 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/diario.jpeg" alt="Diários de uma Apotecária" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Diários de uma Apotecária</h3>
-                  <p className="text-sm text-stone-500">Mistério</p>
-                  <p className="text-sm font-bold text-red-600">★ 8.8 / 10</p>
+              <li className="card">
+                <img src="/animes/diario.jpeg" alt="Diários de uma Apotecária" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Diários de uma Apotecária</h3>
+                  <p className="card-genero">Mistério</p>
+                  <p className="card-nota">★ 8.8 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/frieren.jpeg" alt="Frieren" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Frieren</h3>
-                  <p className="text-sm text-stone-500">Fantasia</p>
-                  <p className="text-sm font-bold text-red-600">★ 9.3 / 10</p>
+              <li className="card">
+                <img src="/animes/frieren.jpeg" alt="Frieren" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Frieren</h3>
+                  <p className="card-genero">Fantasia</p>
+                  <p className="card-nota">★ 9.3 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/spy.jpeg" alt="Spy x Family" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Spy x Family</h3>
-                  <p className="text-sm text-stone-500">Comédia</p>
-                  <p className="text-sm font-bold text-red-600">★ 8.6 / 10</p>
+              <li className="card">
+                <img src="/animes/spy.jpeg" alt="Spy x Family" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Spy x Family</h3>
+                  <p className="card-genero">Comédia</p>
+                  <p className="card-nota">★ 8.6 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/dandandan.jpeg" alt="Dandadan" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Dandadan</h3>
-                  <p className="text-sm text-stone-500">Ação</p>
-                  <p className="text-sm font-bold text-red-600">★ 9.5 / 10</p>
+              <li className="card">
+                <img src="/animes/dandandan.jpeg" alt="Dandadan" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Dandadan</h3>
+                  <p className="card-genero">Ação</p>
+                  <p className="card-nota">★ 8.5 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/bluelock.jpeg" alt="Blue Lock" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Blue Lock</h3>
-                  <p className="text-sm text-stone-500">Esporte</p>
-                  <p className="text-sm font-bold text-red-600">★ 8.2 / 10</p>
+              <li className="card">
+                <img src="/animes/bluelock.jpeg" alt="Blue Lock" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Blue Lock</h3>
+                  <p className="card-genero">Esporte</p>
+                  <p className="card-nota">★ 8.2 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/haik.jpeg" alt="Haikyuu!!" className="aspect-[3/4] w-full object-cover object-top" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Haikyuu!!</h3>
-                  <p className="text-sm text-stone-500">Esporte</p>
-                  <p className="text-sm font-bold text-red-600">★ 8.1 / 10</p>
+              <li className="card">
+                <img src="/animes/haik.jpeg" alt="Haikyuu!!" className="card-imagem" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Haikyuu!!</h3>
+                  <p className="card-genero">Esporte</p>
+                  <p className="card-nota">★ 8.7 / 10</p>
                 </div>
               </li>
 
-              <li className="border-2 border-black bg-white">
-                <img src="/animes/man.jpeg" alt="Chainsaw Man" className="aspect-[3/4] w-full object-cover object-bottom" />
-                <div className="p-3">
-                  <h3 className="font-bold leading-tight">Chainsaw Man</h3>
-                  <p className="text-sm text-stone-500">Ação</p>
-                  <p className="text-sm font-bold text-red-600">★ 8.3 / 10</p>
+              <li className="card">
+                <img src="/animes/man.jpeg" alt="Chainsaw Man" className="card-imagem card-imagem-baixo" />
+                <div className="card-info">
+                  <h3 className="card-titulo">Chainsaw Man</h3>
+                  <p className="card-genero">Ação</p>
+                  <p className="card-nota">★ 8.3 / 10</p>
                 </div>
               </li>
             </ul>
 
-            <div className="mt-8 text-center">
-              <button className="border-2 border-black bg-black px-10 py-2 text-sm font-bold uppercase text-white hover:bg-red-600">
-                Ver mais
-              </button>
+            <div className="ver-mais">
+              <button className="botao botao-preto">Ver mais</button>
             </div>
           </section>
 
-          <section className="mt-10 lg:mt-0">
-            <h2 className="border-b-4 border-red-600 pb-1 font-display text-4xl">Explore por gênero</h2>
+          <section className="listagem-secundaria">
+            <h2 className="titulo-secao">Explore por gênero</h2>
 
-            <ul className="mt-6 grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-1">
-              <li className="flex items-center justify-between border-2 border-black bg-white p-3 hover:bg-red-600 hover:text-white">
+            <ul className="lista-generos">
+              <li className="genero">
                 <div>
-                  <h3 className="font-bold">Ação</h3>
-                  <p className="text-sm opacity-60">50 animes</p>
+                  <h3 className="genero-nome">Ação</h3>
+                  <p className="genero-quantidade">120 animes</p>
                 </div>
-                <span className="hidden font-bold lg:block">›</span>
+                <span className="genero-seta">›</span>
               </li>
 
-              <li className="flex items-center justify-between border-2 border-black bg-white p-3 hover:bg-red-600 hover:text-white">
+              <li className="genero">
                 <div>
-                  <h3 className="font-bold">Romance</h3>
-                  <p className="text-sm opacity-60">35 animes</p>
+                  <h3 className="genero-nome">Romance</h3>
+                  <p className="genero-quantidade">85 animes</p>
                 </div>
-                <span className="hidden font-bold lg:block">›</span>
+                <span className="genero-seta">›</span>
               </li>
 
-              <li className="flex items-center justify-between border-2 border-black bg-white p-3 hover:bg-red-600 hover:text-white">
+              <li className="genero">
                 <div>
-                  <h3 className="font-bold">Fantasia</h3>
-                  <p className="text-sm opacity-60">24 animes</p>
+                  <h3 className="genero-nome">Fantasia</h3>
+                  <p className="genero-quantidade">64 animes</p>
                 </div>
-                <span className="hidden font-bold lg:block">›</span>
+                <span className="genero-seta">›</span>
               </li>
 
-              <li className="flex items-center justify-between border-2 border-black bg-white p-3 hover:bg-red-600 hover:text-white">
+              <li className="genero">
                 <div>
-                  <h3 className="font-bold">Mistério</h3>
-                  <p className="text-sm opacity-60">42 animes</p>
+                  <h3 className="genero-nome">Mistério</h3>
+                  <p className="genero-quantidade">42 animes</p>
                 </div>
-                <span className="hidden font-bold lg:block">›</span>
+                <span className="genero-seta">›</span>
               </li>
 
-              <li className="hidden items-center justify-between border-2 border-black bg-white p-3 hover:bg-red-600 hover:text-white md:flex">
+              <li className="genero genero-tablet">
                 <div>
-                  <h3 className="font-bold">Comédia</h3>
-                  <p className="text-sm opacity-60">47 animes</p>
+                  <h3 className="genero-nome">Comédia</h3>
+                  <p className="genero-quantidade">78 animes</p>
                 </div>
-                <span className="hidden font-bold lg:block">›</span>
+                <span className="genero-seta">›</span>
               </li>
 
-              <li className="hidden items-center justify-between border-2 border-black bg-white p-3 hover:bg-red-600 hover:text-white md:flex">
+              <li className="genero genero-tablet">
                 <div>
-                  <h3 className="font-bold">Terror</h3>
-                  <p className="text-sm opacity-60">36 animes</p>
+                  <h3 className="genero-nome">Terror</h3>
+                  <p className="genero-quantidade">36 animes</p>
                 </div>
-                <span className="hidden font-bold lg:block">›</span>
+                <span className="genero-seta">›</span>
               </li>
 
-              <li className="hidden items-center justify-between border-2 border-black bg-white p-3 hover:bg-red-600 hover:text-white lg:flex">
+              <li className="genero genero-desktop">
                 <div>
-                  <h3 className="font-bold">Esporte</h3>
-                  <p className="text-sm opacity-60">29 animes</p>
+                  <h3 className="genero-nome">Esporte</h3>
+                  <p className="genero-quantidade">29 animes</p>
                 </div>
-                <span className="font-bold">›</span>
+                <span className="genero-seta">›</span>
               </li>
             </ul>
           </section>
         </div>
       </main>
 
-      <footer className="mt-10 bg-black py-6 text-center text-sm text-stone-400">
-        © 2026 AnimeHub
-      </footer>
+      <footer className="rodape">© 2026 AnimeHub</footer>
     </div>
   )
 }
