@@ -1,5 +1,7 @@
-@import "tailwindcss";
+* {
+  box-sizing: border-box;
+}
 
-@theme {
-  --font-display: "Bebas Neue", sans-serif;
+body {
+  margin: 0;
 }
