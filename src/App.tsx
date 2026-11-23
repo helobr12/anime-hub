@@ -1,17 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Cabecalho from './components/Cabecalho'
 import Destaque from './components/Destaque'
 import ListaAnimes from './components/ListaAnimes'
 import ListaGeneros from './components/ListaGeneros'
 import Rodape from './components/Rodape'
-import { animes, animeDestaque } from './data/animes'
+import { animeDestaque } from './data/animes'
 import { generos } from './data/generos'
+import type { Anime } from './data/tipos'
 
 function App() {
+  const [animes, setAnimes] = useState<Anime[]>([])
   const [favoritos, setFavoritos] = useState<number[]>([])
   const [apenasFavoritos, setApenasFavoritos] = useState(false)
   const [tema, setTema] = useState<'claro' | 'escuro'>('claro')
+
+  useEffect(() => {
+    fetch('/animes.json')
+      .then((resposta) => resposta.json())
+      .then((dados: Anime[]) => setAnimes(dados))
+  }, [])
 
   function alternarFavorito(id: number) {
     setFavoritos((atual) =>
