@@ -11,6 +11,7 @@ import type { Anime } from './data/tipos'
 
 function App() {
   const [animes, setAnimes] = useState<Anime[]>([])
+  const [carregando, setCarregando] = useState(true)
   const [favoritos, setFavoritos] = useState<number[]>([])
   const [apenasFavoritos, setApenasFavoritos] = useState(false)
   const [tema, setTema] = useState<'claro' | 'escuro'>('claro')
@@ -19,6 +20,7 @@ function App() {
     fetch('/animes.json')
       .then((resposta) => resposta.json())
       .then((dados: Anime[]) => setAnimes(dados))
+      .finally(() => setCarregando(false))
   }, [])
 
   function alternarFavorito(id: number) {
@@ -58,6 +60,7 @@ function App() {
             titulo={tituloLista}
             animes={animesExibidos}
             favoritos={favoritos}
+            carregando={carregando}
             onAlternarFavorito={alternarFavorito}
           />
           <ListaGeneros generos={generos} />

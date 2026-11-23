@@ -5,16 +5,19 @@ type ListaAnimesProps = {
   titulo: string
   animes: Anime[]
   favoritos: number[]
+  carregando: boolean
   onAlternarFavorito: (id: number) => void
 }
 
-function ListaAnimes({ titulo, animes, favoritos, onAlternarFavorito }: ListaAnimesProps) {
+function ListaAnimes({ titulo, animes, favoritos, carregando, onAlternarFavorito }: ListaAnimesProps) {
   return (
     <section className="listagem-principal">
       <h2 className="titulo-secao">{titulo}</h2>
 
-      {animes.length === 0 ? (
-        <p className="lista-vazia">Você ainda não favoritou nenhum anime.</p>
+      {carregando ? (
+        <p className="mensagem-estado">Carregando animes...</p>
+      ) : animes.length === 0 ? (
+        <p className="mensagem-estado">Você ainda não favoritou nenhum anime.</p>
       ) : (
         <ul className="grade-animes">
           {animes.map((anime) => (
