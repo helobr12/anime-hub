@@ -1,7 +1,7 @@
 # anime-hub
 Trabalho de Conclusão da Disciplina de Desenvolvimento em Ambiente Web.
 
-# Autor
+# Autora
 Heloiza Brasil.
 
 # Fase 1
@@ -16,9 +16,11 @@ Separação da página em componentes, listagens com map e key, e interações c
 # Fase 4
 Listagem principal carregada com fetch e useEffect, com estados de carregando e de erro.
 
-## Como executar
+# Como executar
+```bash
 npm install
 npm run dev
+```
 
-## Fonte dos dados
+# Fonte dos dados
 A listagem principal vem do arquivo public/animes.json, carregado com fetch. A listagem de gêneros e o destaque vêm de vetores locais em src/data.
