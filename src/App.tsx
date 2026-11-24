@@ -12,14 +12,19 @@ import type { Anime } from './data/tipos'
 function App() {
   const [animes, setAnimes] = useState<Anime[]>([])
   const [carregando, setCarregando] = useState(true)
+  const [erro, setErro] = useState(false)
   const [favoritos, setFavoritos] = useState<number[]>([])
   const [apenasFavoritos, setApenasFavoritos] = useState(false)
   const [tema, setTema] = useState<'claro' | 'escuro'>('claro')
 
   useEffect(() => {
     fetch('/animes.json')
-      .then((resposta) => resposta.json())
+      .then((resposta) => {
+        if (!resposta.ok) throw new Error('Falha ao carregar')
+        return resposta.json()
+      })
       .then((dados: Anime[]) => setAnimes(dados))
+      .catch(() => setErro(true))
       .finally(() => setCarregando(false))
   }, [])
 
@@ -61,6 +66,7 @@ function App() {
             animes={animesExibidos}
             favoritos={favoritos}
             carregando={carregando}
+            erro={erro}
             onAlternarFavorito={alternarFavorito}
           />
           <ListaGeneros generos={generos} />
