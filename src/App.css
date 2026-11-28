@@ -112,9 +112,18 @@ input {
   color: var(--cor-destaque);
 }
 
-.lista-vazia {
+.mensagem-estado {
   margin: var(--espaco-6) 0 0;
   color: var(--cor-texto-suave);
+}
+
+.mensagem-erro {
+  margin: var(--espaco-6) 0 0;
+  padding: var(--espaco-4);
+  border: var(--borda);
+  border-color: var(--cor-destaque);
+  color: var(--cor-destaque);
+  font-weight: 700;
 }
 
 .botao-menu {
